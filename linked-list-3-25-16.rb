@@ -121,13 +121,18 @@ class LinkedList
       right_head =
       left_next_node = right_head.next
     end
-    # case
-    # when left_head.next.nil?
-    # when right_head.next.nil?
-    # else
+    #Initialize an output linked list with self.head
+    #add the input linked list's head to the end of the output
+    #Iterate through the length both linked lists
+    #Assuming both linked lists are the same length, we added self[i], then input[i], to the output.
+    # You can't access nodes through indices, so we created current_left_node and current_right_node and reassigned them after each iteration
+  end
 
-    # end
+  def iterate
 
+  end
+
+  def prepend_new_head(node)
   end
 
   def sort
