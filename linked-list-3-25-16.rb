@@ -109,7 +109,7 @@ end
     left_head = self.head
     right_head = list.head
 
-    until left_head.next.nil? && right_head.next.nil?
+    until left_head.nil? && right_head.nil?
       left_next_node = left_head.next
       right_next_node = right_head.next
 
@@ -119,6 +119,8 @@ end
       left_head = left_next_node
       right_head = right_next_node
     end
+
+
     #Initialize an output linked list with self.head
     #add the input linked list's head to the end of the output
     #Iterate through the length both linked lists
@@ -168,15 +170,23 @@ a_head = Node.new("List A head")
 a_list = LinkedList.new(a_head)
 a2 = Node.new("A2")
 a3 = Node.new("A3")
-a_head = Node.new("List B head")
+a_list.add_node_to_tail(a2)
+a_list.add_node_to_tail(a3)
+b_head = Node.new("List B head")
 b_list = LinkedList.new(b_head)
 b2 = Node.new("B2")
 b3 = Node.new("B3")
+b_list.add_node_to_tail(b2)
+b_list.add_node_to_tail(b3)
 
+p "List A pre-zip "
 p a_list
+p "List B pre-zip "
 p b_list
 a_list.zip(b_list)
+p "List A post-zip "
 p a_list
+p "List B post-zip "
 p b_list
 
 ### OLD VERSION FROM DECEMEBER
