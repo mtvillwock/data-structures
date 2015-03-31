@@ -133,9 +133,22 @@ end
   end
 
   def prepend_new_head(node)
+    node.next = self.head
+    # set next value of new node to head
+    self.head = node
+    # set head to be the new node
   end
 
   def sort
+  end
+
+  def runner
+    # fast = self.head.next.next
+    # slow = self.head.next
+    # until fast.nil? || fast.next.nil?
+    # => fast = fast.next.next
+    # => slow = slow.next
+    # end
   end
 end
 
@@ -187,6 +200,10 @@ a_list.zip(b_list)
 p "List A post-zip "
 p a_list
 p "List B post-zip "
+p b_list
+
+new_head = Node.new("replacing the head")
+b_list.prepend_new_head(new_head)
 p b_list
 
 ### OLD VERSION FROM DECEMEBER
