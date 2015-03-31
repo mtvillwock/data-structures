@@ -129,7 +129,15 @@ end
   end
 
   def iterate
-
+    if block_given?
+      current_node = @head
+      until current_node.nil?
+        yield current_node
+        current_node = current_node.next
+      end
+    else
+      print_list
+    end
   end
 
   def prepend_new_head(node)
@@ -202,9 +210,14 @@ p a_list
 p "List B post-zip "
 p b_list
 
-new_head = Node.new("replacing the head")
-b_list.prepend_new_head(new_head)
-p b_list
+# new_head = Node.new("replacing the head")
+# b_list.prepend_new_head(new_head)
+# p b_list
+
+p a_list.iterate { |node| node.value << " was iterated"}
+# above method returns nil just like #each should
+p a_list
+# but it redefines values (so is it #map now?)
 
 ### OLD VERSION FROM DECEMEBER
 # linked_list.rb
