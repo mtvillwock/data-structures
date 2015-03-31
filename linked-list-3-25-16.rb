@@ -119,13 +119,6 @@ end
       left_head = left_next_node
       right_head = right_next_node
     end
-
-
-    #Initialize an output linked list with self.head
-    #add the input linked list's head to the end of the output
-    #Iterate through the length both linked lists
-    #Assuming both linked lists are the same length, we added self[i], then input[i], to the output.
-    # You can't access nodes through indices, so we created current_left_node and current_right_node and reassigned them after each iteration
   end
 
   def iterate
@@ -191,8 +184,10 @@ a_head = Node.new("List A head")
 a_list = LinkedList.new(a_head)
 a2 = Node.new("A2")
 a3 = Node.new("A3")
+a4 = Node.new("A4")
 a_list.add_node_to_tail(a2)
 a_list.add_node_to_tail(a3)
+a_list.add_node_to_tail(a4)
 b_head = Node.new("List B head")
 b_list = LinkedList.new(b_head)
 b2 = Node.new("B2")
@@ -214,9 +209,9 @@ p b_list
 # b_list.prepend_new_head(new_head)
 # p b_list
 
-p a_list.iterate { |node| node.value << " was iterated"}
+# p a_list.iterate { |node| node.value << " was iterated"}
 # above method returns nil just like #each should
-p a_list
+# p a_list
 # but it redefines values (so is it #map now?)
 
 ### OLD VERSION FROM DECEMEBER
