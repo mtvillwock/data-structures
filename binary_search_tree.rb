@@ -23,13 +23,13 @@ class BinarySearchTree
     # traverse tree in BFS and print nicely
   end
 
-  def insert_node(node) # I think this should take a position or value parameter
+  def insert_node(node)
     current_node = self.root
     # should this use breadth-first or depth-first tree traversal?
-    # base case if position == 0 or is root?
     until current_node.right.nil? && current_node.left_child.nil?
       # This only seems to plan to add nodes to the end of a tree branch
       # Need to rewrite it so that it can add a node anywhere in the tree
+      # based on the value of the node being inserted
       # Example: what if the tree has only a root, or a root and one leaf
       # Write/Draw some edge cases for this and revise it
       if node.value < root.value
