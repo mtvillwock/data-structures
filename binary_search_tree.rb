@@ -19,6 +19,10 @@ class BinarySearchTree
     @root = node
   end
 
+  def print_tree
+    # traverse tree in BFS and print nicely
+  end
+
   def insert_node(node) # I think this should take a position or value parameter
     current_node = self.root
     # should this use breadth-first or depth-first tree traversal?
